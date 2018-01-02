@@ -1,0 +1,54 @@
+Displaying first 10 natural numbers in C++
+#include<iostream>
+int main()
+{
+	int n;
+	clrscr();
+	cout<<"\n The first 10 natural numbers are"<<;
+	for(n=1;n<=10;n++)
+		cout<<" "<<;
+	return 0;
+}
+---------------------------------------------------------
+Swaping of two numbers in c++
+#include<iostream.h>
+#include<conio.h>
+int main()
+{
+	int a=22,b=33;
+	clrscr();
+	cout<<"\n swapping of two numbers"<<endl;
+	a=a+b-(b=a);
+	cout<<" "<<a;
+	cout<<" "<<b;
+	getch();
+	return 0;
+}
+------------------------------------------------------------
+Structures in c++
+#include<iostream.h>
+#inlude<conio.h>
+#include<string.h>
+struct person()
+{
+	char name[20];
+	int age;
+	float salary;
+};
+int main()
+{
+	person p;
+	clrscr();
+	cout<<"Enter full name: \n";
+	cin>>p.name,50;
+	cout<<"Enter age: \n";
+	cin>>p.age,2;
+	cout<<"Enter salary: \n";
+	cin>>p.salary,6;
+	cout<<"The details of the employee are"<<endl;
+	cout<<"Name: "<<p.name;
+	cout<<"Age: "<<p.age;
+	cout<<"Salary: "<<p.salary;
+	getch();
+	return 0;
+}
