@@ -1,0 +1,319 @@
+****constructor initialization****
+#include<iostream.h>
+#include<conio.h>
+class apple{
+	public:
+	apple()
+	{
+		cout<<"This is a constructor";
+	}
+}
+int main()
+{
+	apple obj;
+	clrscr();
+	obj.apple();
+	getch();
+	return 0;
+}
+-------------------------------------------------------------
+****paramaterised amd unparameterised constructors****
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+class employee
+{
+	public:
+	int id;
+	char name[10];
+	float salary;
+	employee()
+	{
+		cout<<"This is unparamaterised constructor";
+		id=1;
+		salary=550000.00;
+		strcpy(name,"Adithya");
+	}
+	employee(int i,char n[], float s)
+	{
+		cout<<"This is a parameterised constructor";
+		id=i;
+		strcpy(name,n);
+		salary=s;
+	}
+	void display()
+	{
+		cout<<id<<" "<<name<<" "<<salary<<" "<<endl;
+	}
+	int display(int i,char n[], float s)
+	{
+		cout<<i<<" "<<n<<" "<<s<<" "<<endl;
+		return 0;
+	}
+};
+int main()
+{
+	employee e1;
+	employee e2;
+	clrscr();
+	e1.display();
+	e1.display(1,"Adithya",550000.00);
+	e2.display();
+	e2.display(1,"Alla",6547357);
+	getch();
+	return 0;
+}
+------------------------------------------------------------------------
+ ****Inheritance programm****
+#include <iostream>
+using namespace std;
+class Shape {
+   public:
+      void setWidth(int w) {
+         width = w;
+      }
+      void setHeight(int h) {
+         height = h;
+      }
+      
+   protected:
+      int width;
+      int height;
+};
+class PaintCost {
+   public:
+      int getCost(int area) {
+         return area * 70;
+      }
+};
+class Rectangle: public Shape, public PaintCost {
+   public:
+      int getArea() {
+         return (width * height); 
+      }
+};
+
+int main(void) {
+   Rectangle Rect;
+   int area;
+   Rect.setWidth(5);
+   Rect.setHeight(7);
+   area = Rect.getArea();
+   cout << "Total area: " << Rect.getArea() << endl;
+   cout << "Total paint cost: Rs" << Rect.getCost(area) << endl;
+   return 0;
+}
+----------------------------------------------------------------------------------
+****Multilevel Inheritance****
+#include <iostream>
+using namespace std;
+
+class A
+{
+    public:
+      void display()
+      {
+          cout<<"Base class content.";
+      }
+};
+
+class B : public A
+{
+    public:
+    void display()
+    {
+        cout<<"Child1 Class content.";
+    }
+};
+
+class C : public B
+{
+    public:
+    void display()
+    {
+        cout<<"Child2 class content.";
+    }
+};
+
+int main()
+{
+    A obj;
+    B obj1;
+    C obj2;
+    obj.display();
+    obj1.display();
+    obj2.display();
+    return 0;
+}
+---------------------------------------------------------------------------------------
+****Diamond Error in multiple inheritence****
+#include <iostream>
+using namespace std;
+
+class A
+{
+    public:
+      void display()
+      {
+          cout<<"Base class content.";
+      }
+};
+
+class B : public A
+{
+    public:
+    void display()
+    {
+        cout<<"Child1 Class content.";
+    }
+};
+
+class C : public A
+{
+    public:
+    void display()
+    {
+        cout<<"Child2 class content.";
+    }
+};
+Class D : public B, public A
+{
+    public:
+    void display()
+    {
+        cout<<"Child3 class content.";
+    }
+}
+
+int main()
+{
+    //A obj;
+    //B obj1;
+    D obj2;
+    //obj.display();
+    //obj1.display();
+    obj2.display();
+    return 0;
+}
+--------------------------------------------------------------------------------
+**********************C++ programms debugging****************************
+****class examples****
+#include <iostream>   
+using namespace std;   
+class Student {   
+   public:   
+      int id;//data member (also instance variable)       
+      string name;//data member(also instance variable)       
+};   
+int main() {   
+    Student s1; //creating an object of Student    
+    s1.id = 201;     
+    s1.name = "Sonoo Jaiswal";    
+    cout<<s1.id<<endl;   
+    cout<<s1.name<<endl;   
+    return 0;   
+} 
+========================================================
+****Initialize data through methods****
+#include <iostream>   
+using namespace std;   
+class Student {   
+   public:   
+       int id;//data member (also instance variable)       
+       string name;//data member(also instance variable)       
+       void insert(int i, string n)     
+        {     
+            id = i;     
+            name = n;     
+        }     
+       void display()     
+        {     
+            cout<<id<<"  "<<name<<endl;     
+        }     
+};   
+int main(void) {   
+    Student s1; //creating an object of Student    
+    Student s2; //creating an object of Student   
+    s1.insert(201, "Sonoo");     
+    s2.insert(202, "Nakul");     
+    s1.display();     
+    s2.display();   
+    return 0;   
+}   
+==========================================================
+****Store and Display Employee Information****
+#include <iostream>   
+using namespace std;   
+class Employee {   
+   public:   
+       int id;//data member (also instance variable)       
+       string name;//data member(also instance variable)   
+       float salary;   
+       void insert(int i, string n, float s)     
+        {     
+            id = i;     
+            name = n;     
+            salary = s;   
+        }     
+       void display()     
+        {     
+            cout<<id<<"  "<<name<<"  "<<salary<<endl;     
+        }     
+};   
+int main(void) {   
+    Employee e1; //creating an object of Employee    
+    Employee e2; //creating an object of Employee   
+    e1.insert(201, "Sonoo",990000);     
+    e2.insert(202, "Nakul", 29000);     
+    e1.display();     
+    e2.display();     
+    return 0;   
+}   
+=========================================================
+****Default Constructor****
+#include <iostream>   
+using namespace std;   
+class Employee   
+ {   
+   public:   
+        Employee()     
+        {     
+            cout<<"Default Constructor Invoked"<<endl;     
+        }     
+};   
+int main(void)    
+{   
+    Employee e1; //creating an object of Employee    
+    Employee e2;    
+    return 0;   
+} 
+==========================================================
+****Parameterised constructor****
+#include <iostream> 
+using namespace std; 
+class Employee { 
+   public: 
+       int id;//data member (also instance variable)     
+       string name;//data member(also instance variable) 
+       float salary; 
+       Employee(int i, string n, float s)   
+        {   
+            id = i;   
+            name = n;   
+            salary = s; 
+        }   
+       void display()   
+        {   
+            cout<<id<<"  "<<name<<"  "<<salary<<endl;   
+        }   
+}; 
+int main(void) { 
+    Employee e1 =Employee(101, "Sonoo", 890000); //creating an object of Employee  
+    Employee e2=Employee(102, "Nakul", 59000);  
+    e1.display();   
+    e2.display();   
+    return 0; 
+} 
+==========================================================
+
+
