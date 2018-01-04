@@ -1,0 +1,19 @@
+#include<iostream.h>
+#include<conio.h>
+int main()
+{
+	clrscr();
+	cout<<"Find Size of fundamental data types :\n";
+	cout<<"------------------------------------\n";
+	cout<<"sizeof(char) is :"<<sizeof(char)<<" bytes\n";
+	cout<<"sizeof(short) is :"<<sizeof(short)<<" bytes\n";
+	cout<<"sizeof(int) is :"<<sizeof(int)<<" bytes\n";
+	cout<<"sizeof(long) is :"<<sizeof(long)<<" bytes\n";
+	cout<<"sizeof(long long) is :"<<sizeof(long long)<<" bytes\n";
+	cout<<"sizeof(float) is :"<<sizeof(float)<<" bytes\n";
+	cout<<"sizeof(double) is :"<<sizeof(double)<<" bytes\n";
+	cout<<"sizeof(long double) is :"<<sizeof(long double)<<" bytes\n";
+	cout<<"sizeof(bool) is : 1 bytes\n";
+	cout<<"--------------------------------------";
+	return 0;
+}
