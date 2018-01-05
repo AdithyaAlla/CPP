@@ -1,0 +1,96 @@
+****Exception handling****
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b;
+	cin>>a;
+	try
+	{
+		if(a<=500)
+		{
+			throw a;
+		}
+		else if(a>=501 && a<1000)
+		{
+			throw 'b';
+		}
+		else
+			cout<<"please enter value less than 1000";
+	}
+	catch(int a)
+	{
+		cout<<"500 error";
+	}
+	catch(char b)
+	{
+		cout<<"Global error";
+	}
+	return 0;
+}
+---------------------------------------------------------
+****Abstrract class****
+#include<iostream>
+using namespace std;
+class shape
+{
+    public:
+    virtual void draw()=0;
+};
+class rectangle : shape
+{
+    public:
+    void draw()
+    {
+        cout<<"Drawing rectanle..."<<endl;
+    }
+};
+class circle : shape
+{
+    public:
+    void draw()
+    {
+        cout<<"Drawing circle..."<<endl;
+    }
+};
+int main()
+{
+    rectangle rec;
+    circle cir;
+    rec.draw();
+    cir.draw();
+}
+--------------------------------------------------------
+****inline functions****
+#include<iostream.h>
+#include<string.h>
+#include<conio.h>
+class employee
+{
+	public:
+	int id;
+	char name[10];
+	float salary;
+       inline void insert(int i,char n[],float s)
+	{
+		id=i;
+		strcpy(name,n);
+		salary=s;
+	}
+	void display()
+	{
+		cout<<id<<" "<<name<<" "<<salary<<" "<<endl;
+	}
+};
+int main(void){
+	employee e1;
+	employee e2;
+	clrscr();
+	e1.insert(201,"Adithya",990000);
+	e2.insert(202,"Alla",290000);
+	e1.display();
+	e2.display();
+	getch();
+	return 0;
+}
+--------------------------------------------------------
